@@ -1,0 +1,192 @@
+<html lang="en">
+    <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> FIT FUSION </title>
+
+  <!-- site icon -->
+  <link rel="icon" href="IMG/SITELOGO.jpg">
+  <!-- bootstrap css cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- end bootstrap cdn -->
+
+  <!-- font awesome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- end font awesome -->
+
+  <!-- custome stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- end stylesheet -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <!-- email.js -->
+
+
+</head>
+<body>
+    <!-- top nav -->
+    <section id="top-nav">
+
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+      <!-- <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+                <h2 class="m-0 text-primary">LOGO</h2> -->
+
+      <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <span><img src="IMG/SITELOGO.jpg" alt="" style="max-width: 50px; max-height: 50px;"></span>
+        <P style="margin: 5; padding: 5;">FUEL YOUR BODY FUEL YOUR MIND</P>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="index.html" class="nav-item nav-link active">Home</a>
+
+            <a href="about.html" class="nav-item nav-link">About Us</a>
+
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+              <div class="dropdown-menu fade-up m-0">
+                <a href="Health consulting.html" class="dropdown-item">Health consulting</a>
+                <a href="Gym trainer.html" class="dropdown-item">Gym trainer</a>
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Contact</a>
+              <div class="dropdown-menu fade-up m-0">
+                <a href="contact.html" class="dropdown-item">Contact Us</a>
+                <a href="login.html" class="dropdown-item">Login User</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </nav>
+  </section>
+    <!-- top nav end -->
+    <section id="services">
+        <h1 class="text-center p-4" id="web_services" style="font-family: 'Noto Serif';font-weight: 500;">Contact  <span class="internship-title" style="color: blue;   font-family: Noto Serif"> Us</span> 
+            </h1>
+        <div class="container">
+            <div class="row">
+             
+                <div class="col-lg-6">
+
+                    <img src="IMG/CONTACT US.jpg">
+                </div>
+                <div class="col-lg-6">
+                    <form class="contact-form">
+
+                        <input type="text" placeholder="Your Name" required="" fdprocessedid="zcivjs">
+                        <input type="email" placeholder="Your Email" required="" fdprocessedid="g66ssm">
+                        <textarea rows="5" placeholder="Your Message" required=""></textarea>
+                        <button class="bottom-1" fdprocessedid="o76et">Send Your Message</button>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+       <!-- footer  -->
+    <div class="page-wrapper">
+    <div id="waterdrop"></div>
+    <footer>
+      <div class="footer-top">
+        <div class="pt-exebar">
+      
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-md-3">
+              <div class="footer-site-info">© 2025 <a href="" target="_blank"> Designed by FIT FUSION </a>
+              </div>
+            </div>
+            
+
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+    <!-- footer end  -->
+     <!-- top to bottom code -->
+     <button onclick="topFunction()" id="backToTopBtn" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+      
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const mybutton = document.getElementById("backToTopBtn");
+
+            // Show/hide button on scroll
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 100) { // Adjusted to 100px for better visibility
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            });
+
+            // Scroll to top when clicked
+            mybutton.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        });
+
+         //email.js
+         document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("z_5OcGHB31kghrPeo"); // Replace with your EmailJS user ID
+
+    document.querySelector(".contact-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Collect form data
+        let name = this.querySelector("input[type='text']").value;
+        let email = this.querySelector("input[type='email']").value;
+        let message = this.querySelector("textarea").value;
+
+        // EmailJS parameters
+        let templateParams = {
+            from_name: name,
+            from_email: email,
+            message: message,
+        };
+
+        // Send email using EmailJS
+        emailjs.send("codeshape", "template_r4qsc1i", templateParams)
+            .then(function (response) {
+                alert("Thanks for reaching out to us! 🙏");
+                console.log("SUCCESS!", response.status, response.text);
+                document.querySelector(".contact-form").reset(); // Reset form
+            }, function (error) {
+                alert("Oops! Something went wrong. Please try again.");
+                console.log("FAILED...", error);
+            });
+    });
+});
+           //body right click off
+           document.oncontextmenu = function() {
+  return false;
+}
+    </script>
+<!-- top to bottom code end -->
+    <!-- csotume.js -->
+    <script src="main.js"></script>
+    <!-- end js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://daniellaharel.com/raindrops/js/raindrops.js"></script>
+    <!-- jQuery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- end jQuery cdn -->
+
+    <!-- bootstap js script cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span></body></html>
